@@ -3,132 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPodina Official - Ice Cream & More</title>
+    <title>PPodina - Ice Cream & More</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: #ffcc00;
+            background: #f8f9fa;
             text-align: center;
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background: url('background.jpg') no-repeat center center/cover;
+            background: #28a745;
             color: white;
             padding: 40px 20px;
             font-size: 24px;
             font-weight: bold;
         }
-        nav {
+        h1 {
+            color: white;
             display: flex;
             justify-content: center;
-            background: #ff5e62;
-            padding: 10px;
-            gap: 20px;
-        }
-        .dropdown {
-            position: relative;
-        }
-        .dropdown > a {
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            text-align: left;
-            padding: 10px;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content div {
-            display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
         }
-        .dropdown-content img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .mint-leaf {
+            width: 30px;
+            height: 30px;
         }
-        .about-section {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             padding: 20px;
-            background: #fff;
-            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
         }
         .contact-section {
             padding: 20px;
-            background: #ff5e62;
+            background: #28a745;
             color: white;
+            margin-top: 20px;
         }
         .contact-section a {
             color: yellow;
             font-weight: bold;
+            text-decoration: none;
         }
         footer {
-            background: #ff5e62;
-            padding: 10px;
+            background: #28a745;
             color: white;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🎉 Welcome to PPodina Official! 🎉</h1>
+        <h1>🎉 <span>PPodina</span> <img class="mint-leaf" src="mint-leaf.png" alt="Mint Leaf"> 🎉</h1>
         <p>Fresh Ice Cream, Juices, Shakes & More</p>
     </header>
-    <nav>
-        <div class="dropdown">
-            <a href="#">🍦 Ice Cream</a>
-            <div class="dropdown-content">
-                <strong>REGULAR FLAVOURS:</strong>
-                <div><img src="vanilla.jpg" alt="Vanilla"> Vanilla - Rs. 100</div>
-                <div><img src="king_kulfa.jpg" alt="King Kulfa"> King Kulfa - Rs. 120</div>
-                <div><img src="vanilla_c.jpg" alt="Vanilla C"> Vanilla C - Rs. 110</div>
-                <div><img src="caramel_crunch.jpg" alt="Caramel Crunch"> Caramel Crunch - Rs. 150</div>
-                <div><img src="strawberry_ripple.jpg" alt="Strawberry Ripple"> Strawberry Ripple - Rs. 130</div>
-                <div><img src="blueberry.jpg" alt="Blueberry"> BlueBerry - Rs. 140</div>
-                <div><img src="pineapple.jpg" alt="Pineapple"> Pineapple - Rs. 120</div>
-                <div><img src="chocolate_chip.jpg" alt="Chocolate Chip"> Chocolate Chip - Rs. 130</div>
-                <div><img src="tootie_fruity.jpg" alt="Tootie Fruity"> Tootie Fruity - Rs. 140</div>
-                <div><img src="mango.jpg" alt="Mango"> Mango - Rs. 130</div>
-                <div><img src="yellow_vanilla.jpg" alt="Yellow Vanilla"> Yellow Vanilla - Rs. 100</div>
-                <strong>SPECIAL FLAVOURS:</strong>
-                <div><img src="roasted_almond.jpg" alt="Roasted Almond"> Roasted Almond - Rs. 180</div>
-                <div><img src="strawberry_cheese_cake.jpg" alt="Strawberry Cheese Cake"> Strawberry Cheese Cake - Rs. 200</div>
-                <div><img src="cicilion.jpg" alt="Cicilion"> Cicilion - Rs. 190</div>
-                <div><img src="oreo.jpg" alt="Oreo"> Oreo - Rs. 170</div>
-                <div><img src="pista.jpg" alt="Pista"> Pista - Rs. 160</div>
-            </div>
+    <section class="container">
+        <div class="card">
+            <h3>🍦 Ice Cream</h3>
+            <p>Vanilla - <span class="price">Rs. 100</span></p>
+            <p>King Kulfa - <span class="price">Rs. 120</span></p>
+            <p>Pista - <span class="price">Rs. 160</span></p>
         </div>
-    </nav>
-    <section class="about-section">
-        <h2>About Us</h2>
-        <p>Welcome to PPodina Juice Bar and Ice Cream, your go-to destination for premium ice cream, fresh juices, shakes, and kulfi for all occasions! Whether it’s a wedding, corporate event, birthday party, or a shop looking for top-quality frozen delights, we bring you the finest, creamiest, and most refreshing treats.</p>
-        <p>We take pride in offering a wide variety of delicious flavors made with high-quality ingredients, ensuring every scoop and sip is a delightful experience. Our mission is to make your special moments even sweeter with our rich and flavorful ice creams and refreshing beverages.</p>
-        <p>Looking to add a cool and delicious touch to your event? Contact us today and let us serve you the best!</p>
+        <div class="card">
+            <h3>🥤 Fresh Juice</h3>
+            <p>Mint Lemonade - <span class="price">Rs. 120</span></p>
+            <p>Pina Colada - <span class="price">Rs. 150</span></p>
+        </div>
+        <div class="card">
+            <h3>🍹 Shakes</h3>
+            <p>Banana Shake - <span class="price">Rs. 130</span></p>
+            <p>Chocolate Shake - <span class="price">Rs. 150</span></p>
+        </div>
+        <div class="card">
+            <h3>🍹 Slush</h3>
+            <p>Blueberry - <span class="price">Rs. 140</span></p>
+            <p>Mint - <span class="price">Rs. 120</span></p>
+        </div>
     </section>
-    <section id="contact" class="contact-section">
+    <section class="contact-section">
         <h2>📞 Contact Us</h2>
         <p>Call us at: <strong>0345-6323967</strong></p>
         <a href="https://wa.me/03456323967">Chat on WhatsApp</a>
         <p><a href="#">📍 View Location</a></p>
     </section>
     <footer>
-        <p>&copy; 2025 PPodina Official. All rights reserved.</p>
+        <p>&copy; 2025 PPodina. All rights reserved.</p>
     </footer>
 </body>
 </html>
