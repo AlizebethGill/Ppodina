@@ -21,80 +21,25 @@
             padding: 60px 20px;
             background: rgba(0, 0, 0, 0.7);
         }
-        nav {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: none;
             width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+            height: 300px;
+            object-fit: cover;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+        .fade {
+            animation: fadeEffect 5s infinite;
         }
-        nav ul li {
-            margin: 0 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #ffcc00;
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 25px;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: #ff9900;
-        }
-        .about, .contact, .products {
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            color: black;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
-        .flavors h3 {
-            color: #ff6600;
-        }
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        .product-item {
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 20px;
-            margin-top: 20px;
+        @keyframes fadeEffect {
+            0% {opacity: 0;}
+            20% {opacity: 1;}
+            80% {opacity: 1;}
+            100% {opacity: 0;}
         }
     </style>
 </head>
@@ -110,11 +55,16 @@
     <header id="home">
         <h1>Welcome to PPodina Official!</h1>
         <p>Fresh Ice Cream & Juice for Every Occasion</p>
+        <div class="slideshow-container">
+            <img class="slides fade" src="icecream1.jpg" alt="Delicious Ice Cream">
+            <img class="slides fade" src="juice1.jpg" alt="Fresh Juice">
+            <img class="slides fade" src="icecream2.jpg" alt="Tasty Desserts">
+        </div>
         <a href="https://wa.me/03456323967?text=I%20want%20to%20order%20ice%20cream%20and%20juice!" class="btn">Order Now</a>
     </header>
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>PPodina Official is dedicated to providing the best and freshest ice cream and juice to our customers. We specialize in event catering, wedding services, and shop supplies, ensuring that our delicious treats bring joy to every occasion. Our premium flavors are crafted with quality ingredients to offer a taste like no other!</p>
+        <p>PPodina Official specializes in providing high-quality ice creams and fresh juices for a variety of events, including weddings, birthdays, corporate gatherings, and private parties. We ensure premium taste and freshness in every serving. Our services are also available for supply to shops, helping businesses offer the best treats to their customers. With our commitment to quality and taste, PPodina Official is your trusted partner in making every moment sweeter!</p>
     </section>
     <section id="products" class="products">
         <h2>Our Products</h2>
@@ -137,5 +87,20 @@
     <footer>
         <p>&copy; 2025 PPodina Official. All rights reserved.</p>
     </footer>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000);
+        }
+    </script>
 </body>
 </html>
