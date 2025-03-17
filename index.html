@@ -18,6 +18,33 @@
             padding: 50px;
             background: rgba(0, 0, 0, 0.6);
         }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff6600;
+        }
         .btn {
             display: inline-block;
             margin-top: 20px;
@@ -32,7 +59,7 @@
         .btn:hover {
             background: #cc5500;
         }
-        .about, .contact {
+        .about, .contact, .products {
             padding: 50px;
             background: rgba(255, 255, 255, 0.8);
             color: black;
@@ -40,22 +67,51 @@
             width: 80%;
             border-radius: 10px;
         }
+        .products img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home">
         <h1>Welcome to PPodina Official!</h1>
         <p>Fresh Ice Cream & Juice for Every Occasion</p>
         <a href="#order" class="btn">Order Now</a>
     </header>
-    <section class="about">
+    <section id="about" class="about">
         <h2>About Us</h2>
         <p>We provide delicious ice creams and fresh juices for events, weddings, and shops. Taste the best flavors with PPodina!</p>
     </section>
-    <section class="contact">
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <p>Check out our fresh ice creams and juices!</p>
+        <img src="https://source.unsplash.com/300x200/?icecream" alt="Ice Cream">
+        <img src="https://source.unsplash.com/300x200/?juice" alt="Juice">
+    </section>
+    <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>For orders and inquiries, call us at: <strong>0345-6323967</strong></p>
         <a href="#" class="btn">Contact Us</a>
     </section>
+    <footer>
+        <p>&copy; 2025 PPodina Official. All rights reserved.</p>
+    </footer>
 </body>
 </html>
