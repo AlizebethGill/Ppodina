@@ -3,35 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPodina Official</title>
+    <title>PPodina Official - Ice Cream & More</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffcc00;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 40px 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #ff5e62;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background: #ffcc00;
+        }
+        .contact-section {
+            padding: 20px;
+            background: #ff5e62;
+            color: white;
+        }
+        .contact-section a {
+            color: yellow;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <header id="home">
-    <div class="slideshow">
-    </div>
-    <h1>🎉 Welcome to PPodina Official! 🎉</h1>
-    <p>Fresh Ice Cream & Juice for Every Occasion</p>
-</header>
-    <section class="products">
-        <h2>🍦 Our Products 🍦</h2>
-        <div class="product-list">
-            <div class="product-item"><h3>Vanilla</h3></div>
-            <div class="product-item"><h3>King Kulfa</h3></div>
-            <div class="product-item"><h3>Strawberry Ripple</h3></div>
+    <header>
+        <h1>🎉 Welcome to PPodina Official! 🎉</h1>
+        <p>Fresh Ice Cream, Juices, Shakes & More</p>
+    </header>
+    <nav>
+        <div class="dropdown">
+            <a href="#">🍦 Ice Cream</a>
+            <div class="dropdown-content">
+                <a href="#">Vanilla</a>
+                <a href="#">Chocolate</a>
+                <a href="#">Strawberry</a>
+            </div>
         </div>
-    </section>
-
-    <section class="contact">
+        <div class="dropdown">
+            <a href="#">🍧 Kulfi</a>
+            <div class="dropdown-content">
+                <a href="#">Malai Kulfi</a>
+                <a href="#">Pista Kulfi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">🥤 Fresh Juice</a>
+            <div class="dropdown-content">
+                <a href="#">Orange Juice</a>
+                <a href="#">Mango Juice</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">🍹 Shakes</a>
+            <div class="dropdown-content">
+                <a href="#">Banana Shake</a>
+                <a href="#">Chocolate Shake</a>
+            </div>
+        </div>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order</a>
+    </nav>
+    <section id="contact" class="contact-section">
         <h2>📞 Contact Us</h2>
-        <p>For orders, call: <strong>0345-6323967</strong></p>
-        <a href="https://wa.me/03456323967" class="btn">Chat on WhatsApp</a>
+        <p>Call us at: <strong>0345-6323967</strong></p>
+        <a href="https://wa.me/03456323967">Chat on WhatsApp</a>
+        <p><a href="#">📍 View Location</a></p>
     </section>
-
     <footer>
         <p>&copy; 2025 PPodina Official. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
