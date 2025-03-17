@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: #f8f9fa;
+            background: #ffcc00;
             text-align: center;
             color: #333;
             margin: 0;
@@ -21,39 +21,27 @@
             padding: 40px 20px;
             background: #ff5e62;
             color: white;
+            font-size: 24px;
+            font-weight: bold;
+            animation: bounce 1s infinite alternate;
         }
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: auto;
-        }
-        .slides {
-            display: none;
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-        .fade {
-            animation: fadeEffect 5s infinite;
-        }
-        @keyframes fadeEffect {
-            0% {opacity: 0;}
-            20% {opacity: 1;}
-            80% {opacity: 1;}
-            100% {opacity: 0;}
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(10px); }
         }
         .btn {
             display: inline-block;
-            background: #ffcc00;
+            background: #ff3300;
             padding: 12px 24px;
-            color: black;
+            color: white;
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
             margin-top: 20px;
+            transition: background 0.3s ease-in-out;
         }
         .btn:hover {
-            background: #ffdd44;
+            background: #ff6622;
         }
         .product-list {
             display: grid;
@@ -67,203 +55,34 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        footer nav {
+        footer {
             background: #ff5e62;
-            padding: 10px;
-        }
-        footer nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        footer nav ul li {
-            margin: 0 15px;
-        }
-        footer nav ul li a {
+            padding: 20px;
             color: white;
-            text-decoration: none;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <header id="home">
-        <h1>Welcome to PPodina Official!</h1>
+        <h1>🎉 Welcome to PPodina Official! 🎉</h1>
         <p>Fresh Ice Cream & Juice for Every Occasion</p>
-        <div class="slideshow-container">
-            <img class="slides fade" src="icecream1.jpg" alt="Delicious Ice Cream">
-            <img class="slides fade" src="juice1.jpg" alt="Fresh Juice">
-            <img class="slides fade" src="icecream2.jpg" alt="Tasty Desserts">
-        </div>
     </header>
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>PPodina Official is a trusted supplier of premium quality ice creams and fresh juices. We cater to a variety of events, including weddings, birthdays, corporate gatherings, and private parties. Our products are also available for bulk supply to shops. We take pride in delivering the finest quality desserts that add a special touch to your occasions. Experience the richness of flavors and freshness with PPodina Official!</p>
-    </section>
     <section id="products" class="products">
-        <h2>Our Products</h2>
+        <h2>🍦 Our Products 🍦</h2>
         <div class="product-list">
             <div class="product-item"><h3>Vanilla</h3></div>
             <div class="product-item"><h3>King Kulfa</h3></div>
             <div class="product-item"><h3>Strawberry Ripple</h3></div>
             <div class="product-item"><h3>Chocolate Chip</h3></div>
-            <div class="product-item"><h3>Roasted Almond</h3></div>
-            <div class="product-item"><h3>Oreo</h3></div>
-            <div class="product-item"><h3>Pista Kulfa</h3></div>
-            <div class="product-item"><h3>Mango Kulfa</h3></div>
         </div>
     </section>
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>For orders and inquiries, call us at: <strong>0345-6323967</strong></p>
-        <a href="https://wa.me/03456323967" class="btn">Chat on WhatsApp</a>
-    </section>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2025 PPodina Official. All rights reserved.</p>
-    </footer>
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 5000);
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PPodina Official - Fresh Ice Cream & Juice for Every Occasion. Order now for events, weddings, and shops!">
-    <meta name="keywords" content="ice cream, juice, kulfa, desserts, weddings, events, PPodina">
-    <meta name="author" content="PPodina Official">
-    <title>PPodina Official - Fresh Ice Cream & Juice</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            text-align: center;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.8);
-        }
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: auto;
-        }
-        .slides {
-            display: none;
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-        .fade {
-            animation: fadeEffect 5s infinite;
-        }
-        @keyframes fadeEffect {
-            0% {opacity: 0;}
-            20% {opacity: 1;}
-            80% {opacity: 1;}
-            100% {opacity: 0;}
-        }
-        .btn {
-            display: inline-block;
-            background: #ffcc00;
-            padding: 10px 20px;
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background: #ffdd44;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <header id="home">
-        <h1>Welcome to PPodina Official!</h1>
-        <p>Fresh Ice Cream & Juice for Every Occasion</p>
-        <div class="slideshow-container">
-            <img class="slides fade" src="icecream1.jpg" alt="Delicious Ice Cream">
-            <img class="slides fade" src="juice1.jpg" alt="Fresh Juice">
-            <img class="slides fade" src="icecream2.jpg" alt="Tasty Desserts">
-        </div>
-        <a href="https://wa.me/03456323967?text=I%20want%20to%20order%20ice%20cream%20and%20juice!" class="btn">Order Now</a>
-    </header>
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>PPodina Official is your one-stop destination for premium quality ice creams and fresh juices. We provide services for weddings, birthdays, corporate events, and private gatherings. Our fresh and delicious flavors make every occasion special. Whether you need bulk supply for your shop or a customized catering experience for an event, we ensure the best quality and taste. Choose PPodina Official for an unforgettable dessert experience!</p>
-    </section>
-    <section id="products" class="products">
-        <h2>Our Products</h2>
-        <div class="product-list">
-            <div class="product-item"><h3>Vanilla</h3></div>
-            <div class="product-item"><h3>King Kulfa</h3></div>
-            <div class="product-item"><h3>Strawberry Ripple</h3></div>
-            <div class="product-item"><h3>Chocolate Chip</h3></div>
-            <div class="product-item"><h3>Roasted Almond</h3></div>
-            <div class="product-item"><h3>Oreo</h3></div>
-            <div class="product-item"><h3>Pista Kulfa</h3></div>
-            <div class="product-item"><h3>Mango Kulfa</h3></div>
-        </div>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
+        <h2>📞 Contact Us</h2>
         <p>For orders and inquiries, call us at: <strong>0345-6323967</strong></p>
         <a href="https://wa.me/03456323967" class="btn">Chat on WhatsApp</a>
     </section>
     <footer>
         <p>&copy; 2025 PPodina Official. All rights reserved.</p>
     </footer>
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 5000);
-        }
-    </script>
 </body>
 </html>
