@@ -11,3 +11,24 @@ h1 {
 p {
     font-size: 18px;
 }
+.image-gallery {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.image-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    gap: 10px;
+    scroll-behavior: smooth;
+}
+
+.image-container img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
