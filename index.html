@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Welcome to Our Ice Cream Shop</h1> <!-- This is the heading -->
-    <img src="https://github.com/Ppodinaofficial/Ppodina/raw/main/image.jpg" alt="Our delicious ice cream" /> <!-- This is the image -->
-    <p>Check out our special ice cream flavors!</p>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPodina - Ice Cream & More</title>
@@ -34,6 +31,7 @@
         .mint-leaf {
             width: 30px;
             height: 30px;
+            margin-left: 10px;  /* Adjusted for spacing */
         }
         .container {
             display: grid;
@@ -60,6 +58,10 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .add-to-cart:hover {
+            background-color: #218838;
+            transition: background-color 0.3s ease;
+        }
         .cart {
             margin: 20px;
             padding: 20px;
@@ -83,6 +85,18 @@
             color: white;
             padding: 10px;
             margin-top: 20px;
+        }
+        .order-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .order-btn:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
         }
     </style>
 </head>
@@ -114,6 +128,7 @@
         <h2>🛒 Your Cart</h2>
         <ul id="cart-items"></ul>
         <p><strong>Total: Rs. <span id="total-price">0</span></strong></p>
+        <button class="order-btn" onclick="placeOrder()">Place Order</button>
     </section>
     <section class="contact-section">
         <h2>📞 Contact Us</h2>
@@ -142,6 +157,16 @@
                 total += price;
             });
             totalPrice.textContent = total;
+        }
+
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add items before placing an order.");
+            } else {
+                alert("Thank you for your order! We will contact you shortly.");
+                cart = [];  // Clear the cart after order is placed
+                updateCart();
+            }
         }
     </script>
 </body>
