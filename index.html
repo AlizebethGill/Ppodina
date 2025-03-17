@@ -129,4 +129,30 @@
         setInterval(changeSlide, 3000);
     </script>
 </body>
+    <script>
+    // Header Slideshow
+    let slides = document.querySelectorAll(".slideshow img");
+    let index = 0;
+    
+    function changeSlide() {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }
+    
+    setInterval(changeSlide, 3000);
+
+    // Image Gallery Slideshow
+    let gallerySlides = document.querySelectorAll(".image-container img");
+    let galleryIndex = 0;
+
+    function changeGallerySlide() {
+        gallerySlides.forEach(img => img.style.opacity = "0");
+        galleryIndex = (galleryIndex + 1) % gallerySlides.length;
+        gallerySlides[galleryIndex].style.opacity = "1";
+    }
+
+    setInterval(changeGallerySlide, 3000);
+</script>
+
 </html>
