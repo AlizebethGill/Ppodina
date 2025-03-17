@@ -26,24 +26,28 @@
             justify-content: center;
             background: #ff5e62;
             padding: 10px;
+            gap: 20px;
         }
-        nav a {
+        .dropdown {
+            position: relative;
+        }
+        .dropdown > a {
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             font-weight: bold;
-        }
-        .dropdown {
-            position: relative;
             display: inline-block;
         }
         .dropdown-content {
             display: none;
             position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             background: white;
             min-width: 160px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
+            text-align: left;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -103,9 +107,9 @@
                 <a href="#">Chocolate Shake</a>
             </div>
         </div>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#order">Order</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order</a>
     </nav>
     <section id="contact" class="contact-section">
         <h2>📞 Contact Us</h2>
