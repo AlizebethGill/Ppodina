@@ -77,6 +77,19 @@
         .flavors h3 {
             color: #ff6600;
         }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .product-item {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
         footer {
             background: rgba(0, 0, 0, 0.9);
             color: white;
@@ -101,11 +114,20 @@
     </header>
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>We provide delicious ice creams and fresh juices for events, weddings, and shops. Taste the best flavors with PPodina!</p>
+        <p>PPodina Official is dedicated to providing the best and freshest ice cream and juice to our customers. We specialize in event catering, wedding services, and shop supplies, ensuring that our delicious treats bring joy to every occasion. Our premium flavors are crafted with quality ingredients to offer a taste like no other!</p>
     </section>
     <section id="products" class="products">
         <h2>Our Products</h2>
-        <p>Check out our fresh ice creams and juices!</p>
+        <div class="product-list">
+            <div class="product-item"><h3>Vanilla</h3></div>
+            <div class="product-item"><h3>King Kulfa</h3></div>
+            <div class="product-item"><h3>Strawberry Ripple</h3></div>
+            <div class="product-item"><h3>Chocolate Chip</h3></div>
+            <div class="product-item"><h3>Roasted Almond</h3></div>
+            <div class="product-item"><h3>Oreo</h3></div>
+            <div class="product-item"><h3>Pista Kulfa</h3></div>
+            <div class="product-item"><h3>Mango Kulfa</h3></div>
+        </div>
     </section>
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
