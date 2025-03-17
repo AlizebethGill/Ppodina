@@ -3,21 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enjoy the best ice cream, juices, and shakes in Karachi at PPodina. Order online for fresh, tasty treats delivered to your doorstep.">
-    <meta name="keywords" content="Ice cream, Juices, Shakes, Karachi, Fresh ice cream, Best ice cream, PPodina">
-    <meta property="og:title" content="PPodina - Delicious Ice Cream, Juices & Shakes in Karachi">
-    <meta property="og:description" content="Enjoy the best ice cream, juices, and shakes in Karachi at PPodina. Order online for fresh, tasty treats delivered to your doorstep.">
-    <meta property="og:image" content="https://www.podina.com/images/og-image.jpg">
-    <meta property="og:url" content="https://www.podina.com">
-    <title>PPodina - Delicious Ice Cream, Juices & Shakes in Karachi</title>
+    <title>PPodina - Ice Cream & More</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Existing Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #28a745;
+            color: white;
+            padding: 40px 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h1 {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .mint-leaf {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;  /* Adjusted for spacing */
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .add-to-cart {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+            transition: background-color 0.3s ease;
+        }
+        .cart {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .contact-section {
+            padding: 20px;
+            background: #28a745;
+            color: white;
+            margin-top: 20px;
+        }
+        .contact-section a {
+            color: yellow;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        footer {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .order-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .order-btn:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>🎉 <span>PPodina</span> <img class="mint-leaf" src="mint-leaf.png" alt="Fresh mint leaf symbolizing refreshing ice cream flavors"> 🎉</h1>
+        <h1>🎉 <span>PPodina</span> <img class="mint-leaf" src="mint-leaf.png" alt="Mint Leaf"> 🎉</h1>
         <p>Fresh Ice Cream, Juices, Shakes & More</p>
     </header>
     <section class="container">
@@ -28,7 +113,16 @@
             <p>King Kulfa - <span class="price">Rs. 120</span></p>
             <button class="add-to-cart" onclick="addToCart('King Kulfa', 120)">Add to Cart</button>
         </div>
-        <!-- More Cards for Other Products -->
+        <div class="card">
+            <h3>🥤 Fresh Juice</h3>
+            <p>Mint Lemonade - <span class="price">Rs. 120</span></p>
+            <button class="add-to-cart" onclick="addToCart('Mint Lemonade', 120)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <h3>🍹 Shakes</h3>
+            <p>Banana Shake - <span class="price">Rs. 130</span></p>
+            <button class="add-to-cart" onclick="addToCart('Banana Shake', 130)">Add to Cart</button>
+        </div>
     </section>
     <section class="cart">
         <h2>🛒 Your Cart</h2>
@@ -46,7 +140,46 @@
         <p>&copy; 2025 PPodina. All rights reserved.</p>
     </footer>
     <script>
-        // Existing JavaScript
+        let cart = [];
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPrice = document.getElementById("total-price");
+            cartList.innerHTML = "";
+            let total = 0;
+            cart.forEach(({ item, price }) => {
+                const li = document.createElement("li");
+                li.textContent = `${item} - Rs. ${price}`;
+                cartList.appendChild(li);
+                total += price;
+            });
+            totalPrice.textContent = total;
+        }
+
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add items before placing an order.");
+            } else {
+                let orderDetails = "Order Details:\n";
+                cart.forEach(({ item, price }) => {
+                    orderDetails += `${item} - Rs. ${price}\n`;
+                });
+                const total = cart.reduce((acc, { price }) => acc + price, 0);
+                orderDetails += `\nTotal: Rs. ${total}`;
+                
+                const whatsappMessage = encodeURIComponent(orderDetails);
+                const whatsappLink = `https://wa.me/03456323967?text=${whatsappMessage}`;
+                
+                window.open(whatsappLink, '_blank');
+                
+                // Clear cart after sending the order
+                cart = [];
+                updateCart();
+            }
+        }
     </script>
 </body>
 </html>
