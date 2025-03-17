@@ -3,166 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PPodina Official - Fresh Ice Cream & Juice for Every Occasion. Order now for events, weddings, and shops!">
-    <meta name="keywords" content="ice cream, juice, kulfa, desserts, weddings, events, PPodina">
-    <meta name="author" content="PPodina Official">
-    <title>PPodina Official - Fresh Ice Cream & Juice</title>
+    <meta name="description" content="PPodina Official - Fresh Ice Cream & Juice for Every Occasion.">
+    <title>PPodina Official</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #ffcc00;
-            text-align: center;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            position: relative;
-            padding: 40px 20px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            animation: bounce 1s infinite alternate;
-            overflow: hidden;
-        }
-        
-        .slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .slideshow img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        
-        .slideshow img.active {
-            opacity: 1;
-        }
-        
-        @keyframes bounce {
-            from { transform: translateY(0px); }
-            to { transform: translateY(10px); }
-        }
-        .btn {
-            display: inline-block;
-            background: #ff3300;
-            padding: 12px 24px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: background 0.3s ease-in-out;
-        }
-        .btn:hover {
-            background: #ff6622;
-        }
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .product-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background: #ff5e62;
-            padding: 20px;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-    <header id="home">
-        <div <section class="image-gallery">
-    <h2>🍨.image-container {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-    border-radius: 10px;
-}
-
-.image-container img {
-    width: 100%;
-    flex-shrink: 0;
-    transition: transform 1s ease-in-out;
-}
-
-        </div>
+    <header>
         <h1>🎉 Welcome to PPodina Official! 🎉</h1>
         <p>Fresh Ice Cream & Juice for Every Occasion</p>
     </header>
-    <section id="products" class="products">
+
+    <section class="slideshow">
+        <div class="image-container">
+            <img src="icecream1.jpg" alt="Ice Cream">
+            <img src="juice1.jpg" alt="Juice">
+            <img src="kulfa.jpg" alt="Kulfa">
+        </div>
+    </section>
+
+    <section class="products">
         <h2>🍦 Our Products 🍦</h2>
         <div class="product-list">
             <div class="product-item"><h3>Vanilla</h3></div>
             <div class="product-item"><h3>King Kulfa</h3></div>
             <div class="product-item"><h3>Strawberry Ripple</h3></div>
-            <div class="product-item"><h3>Chocolate Chip</h3></div>
         </div>
     </section>
-    <section id="contact" class="contact">
+
+    <section class="contact">
         <h2>📞 Contact Us</h2>
-        <p>For orders and inquiries, call us at: <strong>0345-6323967</strong></p>
+        <p>For orders, call: <strong>0345-6323967</strong></p>
         <a href="https://wa.me/03456323967" class="btn">Chat on WhatsApp</a>
     </section>
+
     <footer>
         <p>&copy; 2025 PPodina Official. All rights reserved.</p>
     </footer>
-    <script>
-        let slides = document.querySelectorAll(".slideshow img");
-        let index = 0;
-        
-        function changeSlide() {
-            slides[index].classList.remove("active");
-            index = (index + 1) % slides.length;
-            slides[index].classList.add("active");
-        }
-        
-        setInterval(changeSlide, 3000);
-    </script>
+
+    <script src="script.js"></script>
 </body>
-    <script>
-    // Header Slideshow
-    let slides = document.querySelectorAll(".slideshow img");
-    let index = 0;
-    
-    function changeSlide() {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }
-    
-    setInterval(changeSlide, 3000);
-
-    // Image Gallery Slideshow
-    let gallerySlides = document.querySelectorAll(".image-container img");
-    let galleryIndex = 0;
-
-    function changeGallerySlide() {
-        gallerySlides.forEach(img => img.style.opacity = "0");
-        galleryIndex = (galleryIndex + 1) % gallerySlides.length;
-        gallerySlides[galleryIndex].style.opacity = "1";
-    }
-
-    setInterval(changeGallerySlide, 3000);
-</script>
-
 </html>
