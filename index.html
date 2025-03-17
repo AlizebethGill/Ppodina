@@ -48,6 +48,22 @@
             font-weight: bold;
             color: #28a745;
         }
+        .add-to-cart {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
         .contact-section {
             padding: 20px;
             background: #28a745;
@@ -76,24 +92,25 @@
         <div class="card">
             <h3>🍦 Ice Cream</h3>
             <p>Vanilla - <span class="price">Rs. 100</span></p>
+            <button class="add-to-cart" onclick="addToCart('Vanilla', 100)">Add to Cart</button>
             <p>King Kulfa - <span class="price">Rs. 120</span></p>
-            <p>Pista - <span class="price">Rs. 160</span></p>
+            <button class="add-to-cart" onclick="addToCart('King Kulfa', 120)">Add to Cart</button>
         </div>
         <div class="card">
             <h3>🥤 Fresh Juice</h3>
             <p>Mint Lemonade - <span class="price">Rs. 120</span></p>
-            <p>Pina Colada - <span class="price">Rs. 150</span></p>
+            <button class="add-to-cart" onclick="addToCart('Mint Lemonade', 120)">Add to Cart</button>
         </div>
         <div class="card">
             <h3>🍹 Shakes</h3>
             <p>Banana Shake - <span class="price">Rs. 130</span></p>
-            <p>Chocolate Shake - <span class="price">Rs. 150</span></p>
+            <button class="add-to-cart" onclick="addToCart('Banana Shake', 130)">Add to Cart</button>
         </div>
-        <div class="card">
-            <h3>🍹 Slush</h3>
-            <p>Blueberry - <span class="price">Rs. 140</span></p>
-            <p>Mint - <span class="price">Rs. 120</span></p>
-        </div>
+    </section>
+    <section class="cart">
+        <h2>🛒 Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: Rs. <span id="total-price">0</span></strong></p>
     </section>
     <section class="contact-section">
         <h2>📞 Contact Us</h2>
@@ -104,5 +121,25 @@
     <footer>
         <p>&copy; 2025 PPodina. All rights reserved.</p>
     </footer>
+    <script>
+        let cart = [];
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPrice = document.getElementById("total-price");
+            cartList.innerHTML = "";
+            let total = 0;
+            cart.forEach(({ item, price }) => {
+                const li = document.createElement("li");
+                li.textContent = `${item} - Rs. ${price}`;
+                cartList.appendChild(li);
+                total += price;
+            });
+            totalPrice.textContent = total;
+        }
+    </script>
 </body>
 </html>
