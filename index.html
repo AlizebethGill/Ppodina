@@ -89,12 +89,22 @@
 <body>
     <header id="home">
         <div <section class="image-gallery">
-    <h2>🍨 Our Special Collection 🍨</h2>
-    <div class="image-container">
-        <img src="icecream1.jpg" alt="Ice Cream">
-        <img src="juice1.jpg" alt="Juice">
-        <img src="kulfa.jpg" alt="Kulfa">
-        <img src="dessert.jpg" alt="Dessert">
+    <h2>🍨.image-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform 1s ease-in-out;
+}
+
         </div>
         <h1>🎉 Welcome to PPodina Official! 🎉</h1>
         <p>Fresh Ice Cream & Juice for Every Occasion</p>
