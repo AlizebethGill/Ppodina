@@ -44,22 +44,25 @@
             left: 50%;
             transform: translateX(-50%);
             background: white;
-            min-width: 160px;
+            min-width: 200px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
             text-align: left;
+            padding: 10px;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        .dropdown-content a {
-            color: #333;
-            padding: 10px;
-            display: block;
-            text-decoration: none;
+        .dropdown-content div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
         }
-        .dropdown-content a:hover {
-            background: #ffcc00;
+        .dropdown-content img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
         .about-section {
             padding: 20px;
@@ -91,64 +94,24 @@
         <div class="dropdown">
             <a href="#">🍦 Ice Cream</a>
             <div class="dropdown-content">
-                <a href="#">Vanilla</a>
-                <a href="#">King Kulfa</a>
-                <a href="#">Pista</a>
-                <a href="#">Caramel Crunch</a>
-                <a href="#">Strawberry</a>
-                <a href="#">BlueBerry</a>
-                <a href="#">Pineapple</a>
-                <a href="#">Chocolate Chip</a>
-                <a href="#">Tootie Fruity</a>
-                <a href="#">Mango</a>
-                <a href="#">Yellow Vanilla</a>
-                <a href="#">Roasted Almond</a>
-                <a href="#">Strawberry Cheese Cake</a>
-                <a href="#">Cicilion</a>
-                <a href="#">Oreo</a>
-                <a href="#">Pista</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">🍧 Kulfi</a>
-            <div class="dropdown-content">
-                <a href="#">Matka kulfi</a>
-                <a href="#">Mango kulfi</a>
-                <a href="#">Pista kulfi</a>
-                <a href="#">Crunch kulfi</a>
-                <a href="#">Mango Fruit</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">🥤 Fresh Juice</a>
-            <div class="dropdown-content">
-                <a href="#">Mint lemonade</a>
-                <a href="#">Pina Colada</a>
-                <a href="#">Angel mist</a>
-                 <a href="#">Strawberry Brust</a>
-                 <a href="#">Fruit cocktail</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">🍹 Shakes</a>
-            <div class="dropdown-content">
-                <a href="#">Banana Shake</a>
-                <a href="#">Chocolate Shake</a>
-                <a href="#">Mango Shake</a>
-                 <a href="#">Vanilla Shake</a>
-                 <a href="#">Pista Shake</a>
-                 <a href="#">Strawberry Shake</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">🍹 Slush</a>
-            <div class="dropdown-content">
-                <a href="#">Blueberry</a>
-                <a href="#">Mint</a>
-                <a href="#">Strawberry</a>
-                 <a href="#">Black berry</a>
-                 <a href="#">Peach/a>
-                 <a href="#">Apricot</a>
+                <strong>REGULAR FLAVOURS:</strong>
+                <div><img src="vanilla.jpg" alt="Vanilla"> Vanilla - Rs. 100</div>
+                <div><img src="king_kulfa.jpg" alt="King Kulfa"> King Kulfa - Rs. 120</div>
+                <div><img src="vanilla_c.jpg" alt="Vanilla C"> Vanilla C - Rs. 110</div>
+                <div><img src="caramel_crunch.jpg" alt="Caramel Crunch"> Caramel Crunch - Rs. 150</div>
+                <div><img src="strawberry_ripple.jpg" alt="Strawberry Ripple"> Strawberry Ripple - Rs. 130</div>
+                <div><img src="blueberry.jpg" alt="Blueberry"> BlueBerry - Rs. 140</div>
+                <div><img src="pineapple.jpg" alt="Pineapple"> Pineapple - Rs. 120</div>
+                <div><img src="chocolate_chip.jpg" alt="Chocolate Chip"> Chocolate Chip - Rs. 130</div>
+                <div><img src="tootie_fruity.jpg" alt="Tootie Fruity"> Tootie Fruity - Rs. 140</div>
+                <div><img src="mango.jpg" alt="Mango"> Mango - Rs. 130</div>
+                <div><img src="yellow_vanilla.jpg" alt="Yellow Vanilla"> Yellow Vanilla - Rs. 100</div>
+                <strong>SPECIAL FLAVOURS:</strong>
+                <div><img src="roasted_almond.jpg" alt="Roasted Almond"> Roasted Almond - Rs. 180</div>
+                <div><img src="strawberry_cheese_cake.jpg" alt="Strawberry Cheese Cake"> Strawberry Cheese Cake - Rs. 200</div>
+                <div><img src="cicilion.jpg" alt="Cicilion"> Cicilion - Rs. 190</div>
+                <div><img src="oreo.jpg" alt="Oreo"> Oreo - Rs. 170</div>
+                <div><img src="pista.jpg" alt="Pista"> Pista - Rs. 160</div>
             </div>
         </div>
     </nav>
