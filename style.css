@@ -36,3 +36,9 @@ header {
     text-decoration: none;
     border-radius: 8px;
 }
+.slider img {
+    width: 100%; /* Image takes full width of parent */
+    max-width: 800px; /* Maximum width of 800px */
+    height: auto; /* Adjust height automatically */
+    border-radius: 10px;
+}
