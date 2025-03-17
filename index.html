@@ -163,8 +163,20 @@
             if (cart.length === 0) {
                 alert("Your cart is empty. Please add items before placing an order.");
             } else {
-                alert("Thank you for your order! We will contact you shortly.");
-                cart = [];  // Clear the cart after order is placed
+                let orderDetails = "Order Details:\n";
+                cart.forEach(({ item, price }) => {
+                    orderDetails += `${item} - Rs. ${price}\n`;
+                });
+                const total = cart.reduce((acc, { price }) => acc + price, 0);
+                orderDetails += `\nTotal: Rs. ${total}`;
+                
+                const whatsappMessage = encodeURIComponent(orderDetails);
+                const whatsappLink = `https://wa.me/03456323967?text=${whatsappMessage}`;
+                
+                window.open(whatsappLink, '_blank');
+                
+                // Clear cart after sending the order
+                cart = [];
                 updateCart();
             }
         }
