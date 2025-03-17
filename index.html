@@ -28,6 +28,11 @@
             align-items: center;
             gap: 10px;
         }
+        .mint-leaf {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;  /* Adjusted for spacing */
+        }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -93,11 +98,23 @@
             background-color: #0056b3;
             transition: background-color 0.3s ease;
         }
+        .address-form {
+            margin-top: 20px;
+            display: none;
+            text-align: left;
+        }
+        .address-form input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>🎉 <span>PPodina</span> 🎉</h1>
+        <h1>🎉 <span>PPodina</span> <img class="mint-leaf" src="mint-leaf.png" alt="Mint Leaf"> 🎉</h1>
         <p>Fresh Ice Cream, Juices, Shakes & More</p>
     </header>
     <section class="container">
@@ -123,7 +140,14 @@
         <h2>🛒 Your Cart</h2>
         <ul id="cart-items"></ul>
         <p><strong>Total: Rs. <span id="total-price">0</span></strong></p>
-        <button class="order-btn" onclick="placeOrder()">Place Order</button>
+        <button class="order-btn" onclick="showAddressForm()">Place Order</button>
+
+        <!-- Address Form -->
+        <div class="address-form" id="address-form">
+            <h3>Enter your Address</h3>
+            <input type="text" id="address" placeholder="Your Address" />
+            <button class="order-btn" onclick="placeOrder()">Confirm Order</button>
+        </div>
     </section>
     <section class="contact-section">
         <h2>📞 Contact Us</h2>
@@ -136,10 +160,12 @@
     </footer>
     <script>
         let cart = [];
+
         function addToCart(item, price) {
             cart.push({ item, price });
             updateCart();
         }
+
         function updateCart() {
             const cartList = document.getElementById("cart-items");
             const totalPrice = document.getElementById("total-price");
@@ -154,16 +180,25 @@
             totalPrice.textContent = total;
         }
 
-        function placeOrder() {
+        function showAddressForm() {
             if (cart.length === 0) {
                 alert("Your cart is empty. Please add items before placing an order.");
+            } else {
+                document.getElementById("address-form").style.display = "block";
+            }
+        }
+
+        function placeOrder() {
+            const address = document.getElementById("address").value;
+            if (!address) {
+                alert("Please enter your address.");
             } else {
                 let orderDetails = "Order Details:\n";
                 cart.forEach(({ item, price }) => {
                     orderDetails += `${item} - Rs. ${price}\n`;
                 });
                 const total = cart.reduce((acc, { price }) => acc + price, 0);
-                orderDetails += `\nTotal: Rs. ${total}`;
+                orderDetails += `\nTotal: Rs. ${total}\nAddress: ${address}`;
                 
                 const whatsappMessage = encodeURIComponent(orderDetails);
                 const whatsappLink = `https://wa.me/03456323967?text=${whatsappMessage}`;
@@ -173,6 +208,7 @@
                 // Clear cart after sending the order
                 cart = [];
                 updateCart();
+                document.getElementById("address-form").style.display = "none";
             }
         }
     </script>
